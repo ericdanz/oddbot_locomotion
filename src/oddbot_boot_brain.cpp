@@ -9,14 +9,14 @@ oddbot_boot_brain::oddbot_boot_brain(){
   //private_node_handle_.param<double>("param", variable, value);
   
   //initialize the publishers and subscribers
-  stop_pub = nh.advertise<oddbot_msgs::OddbotBootStop>("oddbot/boot_stop", 1000);
-  boot_sub = nh.subscribe("oddbot/boot", 1000, &oddbot_boot_brain::get_info, this);
+  stop_pub = nh.advertise<oddbot_msgs::OddbotBootStop>("boot_stop", 1000);
+  boot_sub = nh.subscribe("boot", 1000, &oddbot_boot_brain::get_info, this);
 }
 
-void oddbot_boot_brain::get_info(const oddbot_boot::OddbotBoot::ConstPtr& boot_msg){
+void oddbot_boot_brain::get_info(const oddbot_msgs::OddbotBoot::ConstPtr& boot_msg){
 	
 	oddbot_msgs::OddbotBootStop obs_msg;
-	obs_msg.name = boot_msg.name
+	obs_msg.subnet = boot_msg->subnet;
 	stop_pub.publish(obs_msg);
 	
 }

@@ -15,12 +15,12 @@
 class oddbot_boot_brain
 {
 	public:
-		oddbot_boot_brain()
+		oddbot_boot_brain();
 	private:
 		ros::Publisher stop_pub;
 		ros::Subscriber boot_sub;
-		void get_info(const oddbot_boot::OddbotBoot::ConstPtr& boot_msg);
-}
+		void get_info(const oddbot_msgs::OddbotBoot::ConstPtr& boot_msg);
+};
 
 int main(int argc, char** argv);
 

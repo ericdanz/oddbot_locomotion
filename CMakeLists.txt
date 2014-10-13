@@ -8,6 +8,8 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
   roscpp
   std_msgs
+  genmsg
+  oddbot_msgs
 )
 
 ## System dependencies are found with CMake's conventions
