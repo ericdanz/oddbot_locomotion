@@ -3,7 +3,7 @@ oddbot_boot_module::oddbot_boot_module(){
 	//publish to oddbot_boot_stop
 }
 
-void oddbot_boot_module::get_info(oddbot_boot::OddbotBootStop constPtr &stop_msg){
+void oddbot_boot_module::get_info(const oddbot_boot::OddbotBootStop::ConstPtr& stop_msg){
 	
 	//check my IP address
 	
