@@ -18,7 +18,8 @@ void oddbot_boot_brain::get_info(const oddbot_msgs::OddbotBoot::ConstPtr& boot_m
 	oddbot_msgs::OddbotBootStop obs_msg;
 	obs_msg.subnet = boot_msg->subnet;
 	stop_pub.publish(obs_msg);
-	
+	ROS_INFO("shutdown boot ");
+    ROS_INFO(obs_msg.subnet);	
 }
 
 int main(int argc, char** argv){
