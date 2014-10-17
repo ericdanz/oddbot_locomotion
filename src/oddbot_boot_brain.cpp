@@ -9,7 +9,7 @@ oddbot_boot_brain::oddbot_boot_brain(){
   //private_node_handle_.param<double>("param", variable, value);
   
   //initialize the publishers and subscribers
-  stop_pub = nh.advertise<oddbot_msgs::OddbotBootStop>("boot_stop", 1000);
+  stop_pub = nh.advertise<oddbot_msgs::OddbotBootStop>("boot_stop", 1, true);
   boot_sub = nh.subscribe("boot", 1000, &oddbot_boot_brain::get_info, this);
 }
 
