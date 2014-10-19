@@ -15,16 +15,13 @@ void oddbot_loc_test::get_info(const geometry_msgs::Twist::ConstPtr& vel_msg){
   }
 }
 
-void oddbot_loc_test::send_info(){
-  // Set the subnet
-  module_info_msg.subnet = subnet;
-	// Publish the subnet
-  boot_pub.publish(module_info_msg);
+void oddbot_loc_test::send_od(){
+  // Set the odom message
+  od_msg.twist.twist.linear.x= 2;
+	// Publish the odom message
+  od_pub.publish(od_msg);
 }
 
-bool oddbot_loc_test::get_subnet_msg_stop() {
-  return subnet_msg_stop;
-}
 
 int oddbot_loc_test::get_subnet(){
   int fd;
@@ -55,18 +52,18 @@ int main(int argc, char** argv){
 	//stop when stop running flag is true
 	ros::init(argc, argv, "oddbot_loc_test");
 
-  oddbot_loc_test module = oddbot_loc_test();
+  oddbot_loc_test lt = oddbot_loc_test();
   
   ROS_INFO("oddbot boot module node started!");  
 
   ros::Rate loop_rate(10);
 
-  while (ros::ok() && !module.get_subnet_msg_stop())
+  while (ros::ok())
   {
     module.send_info();
     ros::spinOnce();
     loop_rate.sleep();
   }
-  ROS_INFO("you gon die now");
+  
   return 0;
 }
