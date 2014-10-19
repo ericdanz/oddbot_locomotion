@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>oddbot_boot</name>
+  <name>oddbot_locomotion</name>
   <version>0.0.0</version>
-  <description>The oddbot_boot package</description>
+  <description>The oddbot_locomotion package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->

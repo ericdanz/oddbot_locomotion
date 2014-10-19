@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(oddbot_boot)
+project(oddbot_locomotion)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -105,7 +105,7 @@ include_directories(include
 # )
 
 ## Declare a cpp executable
-add_executable(oddbot_boot_brain src/oddbot_boot_brain.cpp)
+add_executable(oddbot_loc_test src/oddbot_loc_test.cpp)
 add_executable(oddbot_boot_module src/oddbot_boot_module.cpp)
 
 ## Add cmake target dependencies of the executable/library
@@ -113,7 +113,7 @@ add_executable(oddbot_boot_module src/oddbot_boot_module.cpp)
 # add_dependencies(oddbot_boot_node oddbot_boot_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(oddbot_boot_brain
+target_link_libraries(oddbot_loc_test
   ${catkin_LIBRARIES}
 )
 target_link_libraries(oddbot_boot_module
