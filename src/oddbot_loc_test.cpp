@@ -6,14 +6,14 @@ oddbot_loc_test::oddbot_loc_test(){
   ros::NodeHandle nodeHandle;
   od_pub = nodeHandle.advertise<nav_msgs::Odometry>("odom", 1000);
   vel_sub = nodeHandle.subscribe("cmd_vel", 1000, &oddbot_loc_test::get_info, this);
-  subnet = get_subnet();
+  //subnet = get_subnet();
 }
 // Callback message
 void oddbot_loc_test::get_info(const geometry_msgs::Twist::ConstPtr& vel_msg){
 	
-	ROS_INFO("Getting this forward vel: %d",vel_msg.linear.x);
+	ROS_INFO("Getting this forward vel: %f",vel_msg->linear.x);
   }
-}
+
 
 void oddbot_loc_test::send_od(){
   // Set the odom message
@@ -36,7 +36,7 @@ int main(int argc, char** argv){
 
   while (ros::ok())
   {
-    module.send_od();
+    lt.send_od();
     ros::spinOnce();
     loop_rate.sleep();
   }

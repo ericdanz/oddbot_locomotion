@@ -10,6 +10,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   genmsg
   oddbot_msgs
+  oddbot_lib
 )
 
 ## System dependencies are found with CMake's conventions
