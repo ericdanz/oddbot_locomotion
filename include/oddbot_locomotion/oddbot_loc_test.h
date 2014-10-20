@@ -23,7 +23,7 @@ class oddbot_loc_test{
 		ros::Subscriber vel_sub;
 		void get_info(const geometry_msgs::Twist::ConstPtr& vel_msg);
 		int subnet;
-		int get_subnet();
+		
 };
 
 int main(int argc, char** argv);
